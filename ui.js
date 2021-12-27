@@ -20,6 +20,6 @@ class UI {
         this.humidity.textContent = `Humidity: ${weather.main.humidity}`
         this.clouds.textContent = `Clouds: ${weather.clouds.all}`
         this.weather.textContent = `Weather: ${weather.weather.weather}`
-        this.description.textContent = weather.weather.description
+        this.description.textContent = weather.weather[0].description
     }
 }

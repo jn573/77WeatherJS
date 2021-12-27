@@ -1,9 +1,9 @@
 // init storage
 const storage = new Storage()
-// const weatherLocation = storage.getLocationData()
+const weatherLocation = storage.getLocationData()
 
 // init weather object
-const weather = new Weather('Johannesburg', 'za')
+const weather = new Weather(weatherLocation.city, weatherLocation.country)
 
 const ui = new UI();
 
@@ -29,6 +29,7 @@ saveChanges.addEventListener('click', (e) => {
     const modal = document.getElementById('locModal')
     console.log(`City:  ${city}`)
     console.log(`Country: ${country}`)
+    storage.setLocationData(city,country)
 
     weather.changeLocation(city,country)
     getWeather()
